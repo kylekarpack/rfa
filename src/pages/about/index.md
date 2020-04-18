@@ -1,19 +1,53 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: About our values
+id: "3946"
+date: "2017-01-24T09:49:56"
+date_gmt: "2017-01-24T09:49:56"
+guid: "https://bdthemes.com/demo-data/orphan/?page_id=462"
+modified: "2019-05-07T08:47:15"
+modified_gmt: "2019-05-07T15:47:15"
+slug: "about-us"
+status: "publish"
+type: "page"
+link: "https://www.rwandafaithacademy.org/about-us/"
+title: "About Us"
+author: "1"
+featured_media: "0"
+parent: "0"
+menu_order: "0"
+comment_status: "closed"
+ping_status: "closed"
+template: ""
+href: "https://api.w.org/{rel}"
+embeddable: "true"
+count: "12"
+name: "wp"
+templated: "true"
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+### ABOUT RWANDA FAITH ACADEMY
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+<div class="columns">
+<div class="column is-two-thirds">
+We provide faith-based education to elementary aged students in a community&#xA0;on the outskirts of Kigali, Rwanda.
+While still a teenager, RFA Founder Alexis Ruhumuriza obeyed the call of God to take the gospel of Jesus&#x2019; love out of the church and into the streets and trash heaps of Rwanda. There, hundreds of children&#x2014;some as young as five or six years old&#x2014;scrounged and fought for survival, having been abandoned or orphaned by parents and family. Hearing the strong truth that God loved them and had a great future in store for them, they responded. The first steps were hardest; agreeing to leave the &#x201C;security&#x201D; of the group on the streets and venture into unimagined hope was not automatic. But a few responded to Alexis&#x2019; invitation, and he took them home with him. He bathed their terrible skin sores with his own hands, gave them nutritious food, and told them they could become children of God.
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+Continuing to show practical love, Alexis started a small school for these kids, begun by sheer faith, and they came to study, and found a new and longer lasting security as they began to trust God. Now, ten years later, the school started in a small rented house has become a thriving ministry on its own land. There are now more than one thousand children studying there, in nursery school, primary school, and also in the Catch-up school with which the vision began. Children have found the love of God through the consistent discipline of daily exposure to his word and through the patient and skillful work of dedicated teachers.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+In Rwanda this school was originally registered as Hope for Life and is now called Rwanda Faith Academy. Fully accredited by the Government of Rwanda, it is seen locally as a beacon of hope. Rwanda Faith Academy partners in the United States work with Alexis in seeing his vision fully developed. What is needed? More classrooms. Now children are crammed into existing classrooms in three shifts each day and on weekends to accommodate the demand. Funds will be used to build out partially built classrooms and to provide additional toilets. Once these classrooms are finished, the school can begin to become self-sustaining, through the additional fees parents willingly pay to send their children to this elite and successful school.
+
+We are also excited about the impact on the community Alexis&#x2019; ministry is having. He has long understood that supporting strong families is the best way to curtail the flood of street children. He has trained a cadre of men and women to move about the community around the school, watching for any signs of trouble in families. When they hear of a problem, they invite the affected people to participate in counseling. In Rwanda, people actually like to be advised and counseled! Through this, and other community support programs,&#xA0;The Rwanda Faith Academy is turning the tide of the plague of abandoned and hopeless children in Rwanda.
+</div>
+
+<div class="column">
+	<h3>Alexis' Story</h3>
+	<iframe src="https://player.vimeo.com/video/189244318?color=ffffff&byline=0&portrait=0" style="width: 100%" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+</div>
+
+# Donate to Rwanda Faith Academy
+
+Clicking below will take you to the&#xA0;New Horizons website where you can make a secure donation to the Rwanda Faith Academy
+
+[ DONATE NOW ](https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing)[/vc_column_text][/vc_column][/vc_row]
