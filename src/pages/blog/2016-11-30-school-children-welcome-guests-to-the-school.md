@@ -25,9 +25,9 @@ count: "3"
 taxonomy: "post_tag"
 name: "wp"
 templated: "true"
-cover: "/img/IMG-20161115-WA0024-225x300.jpg"
+featuredimage: "/img/IMG-20161115-WA0024.jpg"
 templateKey: 'blog-post'
 ---
 In November 2016 Larry Karpack and his daughter Marissa were excited to be able to travel to Rwanda and visit the Hope for Children school. &#xA0;The administrative team at the school&#xA0;showed the Karpack&#x2019;s the facility and detailed their hopes for adding additional classrooms and improving sanitation and other aspects of the facility. &#xA0;The highlight of the visit was the warm welcome provided by more than 300 students, who came to welcome the Karpack&#x2019;s even though school was out of session. &#xA0;It was amazing to see the energy and enthusiasm of the students and the dedication of the faculty and staff.
 
-![](./IMG-20161115-WA0024-225x300.jpg)&#xA0;&#xA0;![](./header-300x225.jpg)
+![](/img/IMG-20161115-WA0024.jpg)&#xA0;&#xA0;![](/img/header.jpg)

@@ -24,7 +24,10 @@ count: "5"
 taxonomy: "post_tag"
 name: "wp"
 templated: "true"
-cover: "/img/Global-Justice-Sunday-handouts-300x225.jpg"
+featuredimage: "/img/Global-Justice-Sunday-handouts.jpg"
 templateKey: 'blog-post'
+description: Info on Global Justice Sunday
+tags:
+  - justice
 ---
-On January 6, 2019 the Rwanda Faith Academy participated in BelPres Church&#x2019;s&#xA0; Global Justice Sunday outreach event.&#xA0; The event was the kickoff to Global Justice Month at BelPres and highlighted various justice related ministries across the world including RFA.&#xA0; RFA&#x2019;s focus at this event was to increase the number of scholarships we have allowing more students to attend the RFA school in Kigali.&#xA0; We provided each donor with a prayer card, a RFA bookmark, and a refrigerator magnet.![](./Global-Justice-Sunday-handouts-300x225.jpg)
+On January 6, 2019 the Rwanda Faith Academy participated in BelPres Church&#x2019;s&#xA0; Global Justice Sunday outreach event.&#xA0; The event was the kickoff to Global Justice Month at BelPres and highlighted various justice related ministries across the world including RFA.&#xA0; RFA&#x2019;s focus at this event was to increase the number of scholarships we have allowing more students to attend the RFA school in Kigali.&#xA0; We provided each donor with a prayer card, a RFA bookmark, and a refrigerator magnet.![](/img/Global-Justice-Sunday-handouts.jpg)

@@ -1,13 +1,23 @@
 @import "~bulma/sass/utilities/initial-variables";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 
 $kaldi-red: #4594aa;
 $kaldi-red-invert: #fff;
 
 $primary: $kaldi-red;
 $primary-invert: $kaldi-red-invert;
-$body-color: #333;
+$body-color: #666666;
 $black: #2b2523;
+$blue: $kaldi-red;
+
+body {
+  font-family: "Open-Sans", sans-serif;
+}
+
+a {
+  color: $kaldi-red;
+}
 
 h1,
 h2,
@@ -15,7 +25,9 @@ h3,
 h4,
 h5,
 h6,
-a.navbar-item {
+a.navbar-item,
+.title,
+.subtitle {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
@@ -152,8 +164,8 @@ $menu-label-color: $white-ter;
   display: inline;
 }
 
-.blog-list-item.is-featured {
-  background-color: #d6400033;
+.blog-list-item {
+  margin-bottom: 2em;
 }
 .blog-list-item header {
   display: flex;
