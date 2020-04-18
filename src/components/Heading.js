@@ -9,7 +9,7 @@ export class Heading extends React.Component {
 
 
 		return <h2 style={{fontWeight:300, marginBottom: "1em"}}>
-			<span style={{fontWeight:700, borderBottom: "4px solid #4594aa"}}>{firstWord}</span>&nbsp;
+			<span style={{fontWeight:700, boxShadow: "inset 0 -4px #4594aa"}}>{firstWord}</span>&nbsp;
 			{arr.join(" ")}
 		</h2>;
 	}

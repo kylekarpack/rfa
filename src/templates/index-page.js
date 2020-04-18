@@ -71,8 +71,7 @@ export const IndexPageTemplate = ({
                 </div>
                 <div className="column is-half">
                   <Heading title={mainpitch.title}></Heading>
-                  <div dangerouslySetInnerHTML={{__html:mainpitch.description}}></div>
-
+                  <p>{mainpitch.description}</p>
                 </div>
               </div>
             </div>

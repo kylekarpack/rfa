@@ -23,7 +23,7 @@ const PhotosPage = ({ data }) => {
       </div>
 
       <div className="section">
-        <div className="content">
+        <div className="container">
           <Gallery images={fullSize} thumbs={thumbs} />
         </div>
       </div>

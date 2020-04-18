@@ -11,6 +11,8 @@ $body-color: #666666;
 $black: #2b2523;
 $blue: $kaldi-red;
 
+@import "~bulma/bulma";
+
 body {
   font-family: "Open-Sans", sans-serif;
 }
@@ -25,26 +27,22 @@ h3,
 h4,
 h5,
 h6,
-a.navbar-item,
+.navbar-item, .navbar-link,
 .title,
 .subtitle {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
-a.navbar-item {
+a.navbar-item, a.navbar-link {
   text-transform: uppercase;
   font-weight: 700;
-  color: #555555;
+  color: #666666;
   font-size: 0.9em;
 }
 
 a.navbar-item:hover {
   color: $kaldi-red !important;
-}
-
-.navbar .navbar-menu {
-  box-shadow: none !important;
 }
 
 .title-area {
@@ -130,7 +128,7 @@ a.navbar-item {
   padding: 0 1rem;
 }
 footer.footer {
-  padding: 3rem 0rem 0rem;
+  padding: 3rem 0rem;
   background-color: transparent;
 }
 
@@ -175,8 +173,6 @@ $menu-label-color: $white-ter;
   flex-basis: 35%;
   margin: 0 1.5em 0 0;
 }
-
-@import "~bulma";
 
 @include tablet-only {
   .blog-list-item .featured-thumbnail {

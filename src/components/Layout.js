@@ -48,8 +48,6 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
 
-        <script src="/scripts/post-load.js"></script>
-
       </Helmet>
       <Navbar />
       <div>{children}</div>
