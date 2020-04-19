@@ -44,7 +44,7 @@ const Navbar = class extends React.Component {
               <img src={logo} alt="Rwanda Faith Academy" style={{ width: '122px', height: "auto", maxHeight: "none" }} />
             </Link>
             {/* Hamburger menu */}
-            <div
+            <a href="#/"
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
@@ -52,7 +52,7 @@ const Navbar = class extends React.Component {
               <span />
               <span />
               <span />
-            </div>
+            </a>
           </div>
           <div
             id="navMenu"

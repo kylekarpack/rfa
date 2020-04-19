@@ -39,6 +39,12 @@ a.navbar-item, a.navbar-link {
   font-weight: 700;
   color: #666666;
   font-size: 0.9em;
+  padding: 1rem 2rem;
+}
+
+.navbar-dropdown {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 a.navbar-item:hover {
@@ -130,10 +136,6 @@ img[title="RFA Logo"] {
 
 .margin-top-0 {
   margin-top: 0 !important;
-}
-
-a.navbar-item {
-  padding: 1rem 2rem;
 }
 
 .navbar-item .icon {

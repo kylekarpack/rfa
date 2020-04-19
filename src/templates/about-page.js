@@ -36,7 +36,7 @@ export const AboutPageTemplate = ({ post, contentComponent }) => {
 
             <div className="column is-one-third">
               <Heading title="ALEXIS' STORY"></Heading>
-              <iframe src="https://player.vimeo.com/video/189244318?color=ffffff&byline=0&portrait=0" style={{ width: "100%" }} height="300" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
+              <iframe src="https://player.vimeo.com/video/189244318?color=ffffff&byline=0&portrait=0" style={{ width: "100%" }} height="300" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen title="Alexis' story"></iframe>
             </div>
 
           </div>

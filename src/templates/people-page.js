@@ -6,7 +6,11 @@ import Layout from '../components/Layout'
 
 const PeoplePage = ({ data }) => {
 
-	const { people, title } = data.markdownRemark.frontmatter;
+	let { people, title, columnWidth } = data.markdownRemark.frontmatter;
+
+	console.warn(data.markdownRemark.frontmatter)
+
+	columnWidth = columnWidth || "is-one-quarter";
 
 	return (
 		<Layout>
@@ -23,14 +27,18 @@ const PeoplePage = ({ data }) => {
 				<div className="section">
 					<div className="columns is-multiline">
 						{people.map(person => 
-							<div className="column is-one-quarter">
+							<div className={`column ${columnWidth}`}>
 								<div className="card">
 									<div className="card-image">
 										<Img fluid={person.image.childImageSharp.fluid} alt={person.name} />
 									</div>
 									<div className="card-content">
-										<p className="title is-4">{person.name}</p>
-										<p className="subtitle is-6">{person.role}</p>
+										<div className="media">
+											<div className="media-content">
+												<p className="title is-4">{person.name}</p>
+												<p className="subtitle is-6">{person.role}</p>
+											</div>
+										</div>
 										<div className="content">
 											<p>
 												{person.text}
@@ -40,6 +48,13 @@ const PeoplePage = ({ data }) => {
 													<li>{info}</li>
 												)}
 											</ul>
+											{person.button ?
+												<a className="button is-primary is-outlined"
+													href={person.button.link} target="_blank"
+													rel="noopener noreferrer">
+													{person.button.text}
+												</a> : null
+											}
 										</div>
 									</div>
 								</div>
@@ -63,7 +78,8 @@ export const peoplePageQuery = graphql`
   query PeoplePage ($id: String!) {
     markdownRemark(id: { eq: $id }) {
 		frontmatter {
-			title	
+			title
+			columnWidth	
 			people {
 				image {
 					childImageSharp {
@@ -76,6 +92,10 @@ export const peoplePageQuery = graphql`
 				role
 				info
 				text
+				button {
+					text
+					link
+				}
 			}
 		  }
     }
