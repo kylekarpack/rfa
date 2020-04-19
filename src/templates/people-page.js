@@ -24,8 +24,8 @@ const PeoplePage = ({ data }) => {
 			<div className="container">
 				<div className="section">
 					<div className="columns is-multiline">
-						{people.map(person => 
-							<div className={`column ${columnWidth}`}>
+						{people.map((person, i) => 
+							<div className={`column ${columnWidth}`} key={i}>
 								<div className="card">
 									<div className="card-image">
 										<Img fluid={person.image.childImageSharp.fluid} alt={person.name} />
@@ -42,8 +42,8 @@ const PeoplePage = ({ data }) => {
 												{person.text}
 											</p>
 											<ul>
-												{person.info && person.info.map(info => 
-													<li>{info}</li>
+												{person.info && person.info.map((info, i) => 
+													<li key={i}>{info}</li>
 												)}
 											</ul>
 											{person.button ?
@@ -81,7 +81,7 @@ export const peoplePageQuery = graphql`
 			people {
 				image {
 					childImageSharp {
-						fluid {
+						fluid(maxWidth: 500, quality: 50) {
 							...GatsbyImageSharpFluid
 						}
 					}
