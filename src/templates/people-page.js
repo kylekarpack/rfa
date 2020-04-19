@@ -8,8 +8,6 @@ const PeoplePage = ({ data }) => {
 
 	let { people, title, columnWidth } = data.markdownRemark.frontmatter;
 
-	console.warn(data.markdownRemark.frontmatter)
-
 	columnWidth = columnWidth || "is-one-quarter";
 
 	return (
