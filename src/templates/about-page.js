@@ -43,22 +43,26 @@ export const AboutPageTemplate = ({ post, contentComponent }) => {
         </div>
       </section>
 
-      <section className="section" style={{background: "url(/img/img1.jpg) no-repeat center / cover"}}>
+      <section className="section" style={{ background: "url(/img/img1.jpg) no-repeat center / cover" }}>
         <div className="container">
           <div className="content">
-            <div className="semi-box">
-              <Heading title="Donate to Rwanda Faith Academy"></Heading>
+            <div className="columns is-centered">
+              <div className="column is-half">
+                <div className="semi-box">
+                  <Heading title="Donate to Rwanda Faith Academy"></Heading>
 
-              Clicking below will take you to the&#xA0;New Horizons website where you can make a secure donation to the Rwanda Faith Academy
-              <br />
-              <br />
+                  Clicking below will take you to the&#xA0;New Horizons website where you can make a secure donation to the Rwanda Faith Academy
+                  <br />
+                  <br />
 
-              <a
-                className="button is-primary"
-                href="https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing"
-                target="_blank"
-                rel="noopener noreferrer">Donate </a>
+                  <a
+                    className="button is-primary"
+                    href="https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing"
+                    target="_blank"
+                    rel="noopener noreferrer">Donate </a>
 
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { Heading } from './Heading'
 
 class BlogRoll extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class BlogRoll extends React.Component {
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
-                      {post.frontmatter.title}
+                      <Heading title={post.frontmatter.title} />
                     </Link>
                     <br />
                     <span className="subtitle is-size-5 is-block">
@@ -33,7 +34,7 @@ class BlogRoll extends React.Component {
                     </span>
                   </p>
                 </header>
-                <p>
+                <div>
                   <div className="columns">
                     {post.frontmatter.featuredimage ? (
                       <div className="featured-thumbnail column is-one-quarter">
@@ -53,7 +54,7 @@ class BlogRoll extends React.Component {
                   <Link className="button" to={post.fields.slug}>
                     Keep Reading →
                   </Link>
-                </p>
+                </div>
               </article>
             </div>
           ))}

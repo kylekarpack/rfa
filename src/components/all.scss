@@ -27,14 +27,30 @@ h3,
 h4,
 h5,
 h6,
-.navbar-item, .navbar-link,
+.button,
+.navbar-item,
+.navbar-link,
+.custom-heading,
 .title,
 .subtitle {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
-a.navbar-item, a.navbar-link {
+.custom-heading {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  display: block;
+  color: #444444;
+  .first-word {
+    font-weight: 700;
+    border-bottom: 4px solid $kaldi-red;
+  }
+}
+
+a.navbar-item,
+a.navbar-link {
   text-transform: uppercase;
   font-weight: 700;
   color: #666666;
@@ -59,19 +75,19 @@ a.navbar-item:hover {
 
 .card ul {
   margin-left: 1.25em;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .semi-box {
-  background: rgba(255,255,255,0.86);
+  background: rgba(255, 255, 255, 0.86);
   padding: 2em;
   &.dark {
     color: #fff;
     background: rgba(10, 10, 10, 0.4);
-    h1, h2 {
+    .custom-heading {
       color: $kaldi-red;
-      span {
-        border-color: #fff !important;
+      .first-word {
+        border-color: #fff;
       }
     }
   }
