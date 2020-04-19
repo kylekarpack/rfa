@@ -75,6 +75,7 @@ export const peoplePageQuery = graphql`
 				name
 				role
 				info
+				text
 			}
 		  }
     }

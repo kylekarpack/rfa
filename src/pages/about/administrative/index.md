@@ -1,6 +1,6 @@
 ---
 templateKey: people-page
-title: Administrative
+title: Administrative Team
 people:
   - name: Charles BIZIMANA
     role: Director of Administration/Finance
