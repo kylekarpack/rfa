@@ -32,6 +32,9 @@ const PeoplePage = ({ data }) => {
 										<p className="title is-4">{person.name}</p>
 										<p className="subtitle is-6">{person.role}</p>
 										<div className="content">
+											<p>
+												{person.text}
+											</p>
 											<ul>
 												{person.info && person.info.map(info => 
 													<li>{info}</li>
@@ -57,8 +60,8 @@ PeoplePage.propTypes = {
 export default PeoplePage
 
 export const peoplePageQuery = graphql`
-  query PeoplePage {
-    markdownRemark(frontmatter: { templateKey: { eq: "people-page" } }) {
+  query PeoplePage ($id: String!) {
+    markdownRemark(id: { eq: $id }) {
 		frontmatter {
 			title	
 			people {

@@ -1,29 +1,6 @@
 ---
 templateKey: 'about-page'
-path: /about
-id: "3946"
-date: "2017-01-24T09:49:56"
-date_gmt: "2017-01-24T09:49:56"
-guid: "https://bdthemes.com/demo-data/orphan/?page_id=462"
-modified: "2019-05-07T08:47:15"
-modified_gmt: "2019-05-07T15:47:15"
-slug: "about-us"
-status: "publish"
-type: "page"
-link: "https://www.rwandafaithacademy.org/about-us/"
 title: "About Us"
-author: "1"
-featured_media: "0"
-parent: "0"
-menu_order: "0"
-comment_status: "closed"
-ping_status: "closed"
-template: ""
-href: "https://api.w.org/{rel}"
-embeddable: "true"
-count: "12"
-name: "wp"
-templated: "true"
 ---
 
 We provide faith-based education to elementary aged students in a community&#xA0;on the outskirts of Kigali, Rwanda.
