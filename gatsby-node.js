@@ -3,6 +3,26 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
+// exports.sourceNodes = ({ actions, schema }) => {
+//   const { createTypes } = actions
+//   createTypes(`
+//     type Person {
+//       image: File
+//       name: String
+//       role: String
+//       info: [String]
+//     }
+
+//     type MarkdownRemarkFrontmatter {
+//       people: [Person]
+//     }
+
+//     type MarkdownRemark implements Node {
+//       frontmatter: MarkdownRemarkFrontmatter
+//     }
+//   `)
+// }
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 

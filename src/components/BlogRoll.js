@@ -34,7 +34,7 @@ class BlogRoll extends React.Component {
                   </p>
                 </header>
                 <p>
-                  <div class="columns">
+                  <div className="columns">
                     {post.frontmatter.featuredimage ? (
                       <div className="featured-thumbnail column is-one-quarter">
                         <PreviewCompatibleImage
@@ -45,7 +45,7 @@ class BlogRoll extends React.Component {
                         />
                       </div>
                     ) : null}
-                    <div class="column is-three-quarters">
+                    <div className="column is-three-quarters">
                       {post.excerpt}
                     </div>
                   </div>
