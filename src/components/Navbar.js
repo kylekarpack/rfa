@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../img/logo.jpg'
+import logo from '../img/logo.png'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" style={{ paddingTop: 0, paddingBottom: 0 }} title="Logo">
-              <img src={logo} alt="Rwanda Faith Academy" style={{ width: '122px', height: "auto", maxHeight: "none" }} />
+              <img src={logo} alt="Rwanda Faith Academy" style={{ height: '75px', maxHeight: "none" }} />
             </Link>
             {/* Hamburger menu */}
             <a href="#/"

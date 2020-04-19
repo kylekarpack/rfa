@@ -48,7 +48,7 @@ export const query = graphql`
           id
           thumb: childImageSharp {
             fluid(maxWidth: 270, maxHeight: 270) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG 
             }
           }
           full: childImageSharp {
@@ -57,7 +57,7 @@ export const query = graphql`
               quality: 85
               srcSetBreakpoints: [576, 768, 992, 1200]
             ) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG 
             }
           }
         }

@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import homeImage from "../../static/img/home.jpg";
@@ -13,15 +14,7 @@ export const IndexPageTemplate = ({
   content
 }) => (
     <div>
-      <div
-        className="full-width-image margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            image && image.childImageSharp ? image.childImageSharp.fluid.src : image
-          })`,
-          backgroundPosition: `center`,
-          padding: "10vh 0"
-        }}>
+      <BackgroundImage fluid={image && image.childImageSharp ? image.childImageSharp.fluid : image} style={{ padding: "10vh 0" }}>
         <div className="section">
           <div className="container">
             <div className="columns">
@@ -42,8 +35,7 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </div>
-
-      </div>
+      </BackgroundImage>
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -69,7 +61,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </section>
-    </div>
+    </div >
   )
 
 IndexPageTemplate.propTypes = {
@@ -122,7 +114,7 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 80, grayscale: true) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp 
             }
           }
         }

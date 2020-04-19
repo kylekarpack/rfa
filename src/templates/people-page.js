@@ -82,7 +82,7 @@ export const peoplePageQuery = graphql`
 				image {
 					childImageSharp {
 						fluid(maxWidth: 500, quality: 50) {
-							...GatsbyImageSharpFluid
+							...GatsbyImageSharpFluid_tracedSVG 
 						}
 					}
 				}
