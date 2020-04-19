@@ -2,6 +2,7 @@ import React from 'react'
 
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll'
+import { Heading } from '../../components/Heading'
 
 export default class BlogIndexPage extends React.Component {
   render() {
@@ -16,17 +17,15 @@ export default class BlogIndexPage extends React.Component {
           }}
         >
           <div className="container">
-            <h1
+            <div
               className="has-text-weight-bold is-size-1"
               style={{
-                boxShadow: '0.5rem 0 0 #4594aa, -0.5rem 0 0 #4594aa',
-                backgroundColor: '#4594aa',
-                color: 'white',
+                backgroundColor: 'rgba(69, 148, 170, 0.8)',
                 padding: '1rem',
               }}
             >
-              Rwanda Faith Academy Blog
-          </h1>
+              <Heading title="Rwanda Faith Academy Blog" className="is-size-1" style={{ margin: 0, color: "#fff" }}></Heading>
+          </div>
           </div>
         </div>
         <section className="section">
