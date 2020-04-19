@@ -1,65 +1,48 @@
-import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-import Layout from '../components/Layout'
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import homeImage from "../../static/img/home.jpg";
+import { HTMLContent } from '../components/Content';
 import { Heading } from '../components/Heading';
+import Layout from '../components/Layout';
 
 export const IndexPageTemplate = ({
   image,
   title,
   subheading,
-  mainpitch,
+  content
 }) => (
     <div>
       <div
         className="full-width-image margin-top-0"
         style={{
           backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-            })`,
-          backgroundPosition: `top left`,
-          backgroundAttachment: `fixed`,
-          filter: "greyscale(100%)"
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            height: '150px',
-            lineHeight: '1',
-            justifyContent: 'space-around',
-            alignItems: 'left',
-            flexDirection: 'column',
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-            style={{
-              boxShadow:
-                '#4594aa 0.5rem 0px 0px, #4594aa -0.5rem 0px 0px',
-              backgroundColor: '#4594aa',
-              color: 'white',
-              lineHeight: '1',
-              padding: '0.25em',
-            }}
-          >
-            {title}
-          </h1>
-          <h3
-            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-            style={{
-              boxShadow:
-                '#4594aa 0.5rem 0px 0px, #4594aa -0.5rem 0px 0px',
-              backgroundColor: '#4594aa',
-              color: 'white',
-              lineHeight: '1',
-              padding: '0.25em',
-            }}
-          >
-            {subheading}
-          </h3>
+            image && image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`,
+          backgroundPosition: `center`,
+          padding: "10vh 0"
+        }}>
+        <div className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-two-thirds">
+                <div className="semi-box dark">
+                  <Heading title={title} className="is-size-1 is-uppercase" />
+                  {subheading}
+                  <br /><br />
+                  <div>
+                    <a
+                      className="button is-primary"
+                      href="https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing"
+                      target="_blank"
+                      rel="noopener noreferrer">Donate Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <section className="section section--gradient">
         <div className="container">
@@ -67,11 +50,19 @@ export const IndexPageTemplate = ({
             <div className="content">
               <div className="columns">
                 <div className="column is-half">
-                  <img src={homeImage} />
+                  <img src={homeImage} alt="Homepage" />
                 </div>
                 <div className="column is-half">
-                  <Heading title={mainpitch.title}></Heading>
-                  <p>{mainpitch.description}</p>
+                  <Heading title="Donate Now"></Heading>
+                  <HTMLContent content={content} />
+                  <br />
+                  <div>
+                    <a
+                      className="button is-primary is-medium"
+                      href="https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing"
+                      target="_blank"
+                      rel="noopener noreferrer">Donate Now</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -94,7 +85,7 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark
 
   return (
     <Layout>
@@ -106,6 +97,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        content={html}
       />
     </Layout>
   )
@@ -124,21 +116,17 @@ export default IndexPage
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
+            fluid(maxWidth: 2048, quality: 80, grayscale: true) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         subheading
-        mainpitch {
-          title
-          description
-        }
-        description
       }
     }
   }

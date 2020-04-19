@@ -56,6 +56,27 @@ a.navbar-item:hover {
   font-size: .9em;
 }
 
+.semi-box {
+  background: rgba(255,255,255,0.86);
+  padding: 2em;
+  &.dark {
+    color: #fff;
+    background: rgba(10, 10, 10, 0.4);
+    h1, h2 {
+      color: $kaldi-red;
+      span {
+        border-color: #fff !important;
+      }
+    }
+  }
+}
+
+img[title="RFA Logo"] {
+  max-width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
 .content .taglist {
   list-style: none;
   margin-bottom: 0;
@@ -75,7 +96,6 @@ a.navbar-item:hover {
 
 .full-width-image-container {
   width: 100vw;
-  height: 400px;
   position: relative;
   left: 50%;
   right: 50%;
@@ -89,12 +109,7 @@ a.navbar-item:hover {
 
 .full-width-image {
   width: 100vw;
-  height: 400px;
   background-size: cover;
-  background-position: bottom;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .btn {
