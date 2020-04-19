@@ -5,8 +5,12 @@ import Content, { HTMLContent } from '../components/Content'
 import { Heading } from '../components/Heading'
 import Layout from '../components/Layout'
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate = ({ post, contentComponent }) => {
+
+  const { title, subheading } = post.frontmatter;
+  const content = post.html;
+
+  const PageContent = contentComponent || Content;
 
   return (
     <div>
@@ -26,7 +30,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
           <div className="columns content">
 
             <div className="column is-two-thirds">
-              <Heading title="ABOUT RWANDA FAITH ACADEMY"></Heading>
+              {subheading ? <Heading title={subheading}></Heading> : null}
               <PageContent content={content} />
             </div>
 
@@ -39,21 +43,23 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" style={{background: "url(/img/img1.jpg) no-repeat center / cover"}}>
         <div className="container">
           <div className="content">
-            <Heading title="Donate to Rwanda Faith Academy"></Heading>
+            <div className="semi-box">
+              <Heading title="Donate to Rwanda Faith Academy"></Heading>
 
-            Clicking below will take you to the&#xA0;New Horizons website where you can make a secure donation to the Rwanda Faith Academy
-            <br />
-            <br />
+              Clicking below will take you to the&#xA0;New Horizons website where you can make a secure donation to the Rwanda Faith Academy
+              <br />
+              <br />
 
-            <a
-              className="button is-primary"
-              href="https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Donate </a>
+              <a
+                className="button is-primary"
+                href="https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing"
+                target="_blank"
+                rel="noopener noreferrer">Donate </a>
+
+            </div>
           </div>
         </div>
       </section>
@@ -62,8 +68,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 }
 
 AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
+  post: PropTypes.object,
   contentComponent: PropTypes.func,
 }
 
@@ -74,8 +79,7 @@ const AboutPage = ({ data }) => {
     <Layout>
       <AboutPageTemplate
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        post={post}
       />
     </Layout>
   )
@@ -93,6 +97,7 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        subheading
       }
     }
   }

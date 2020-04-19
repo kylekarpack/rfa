@@ -1,6 +1,7 @@
 ---
 templateKey: 'about-page'
-title: "About Us"
+title: About Us
+subheading: ABOUT RWANDA FAITH ACADEMY
 ---
 
 We provide faith-based education to elementary aged students in a community&#xA0;on the outskirts of Kigali, Rwanda.
