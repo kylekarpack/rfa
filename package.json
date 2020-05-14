@@ -6,7 +6,7 @@
   "dependencies": {
     "@browniebroke/gatsby-image-gallery": "^3.2.1",
     "bulma": "0.8.2",
-    "gatsby": "^2.13.31",
+    "gatsby": "^2.21.30",
     "gatsby-background-image": "^1.1.1",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-netlify": "^2.0.6",
