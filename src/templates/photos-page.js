@@ -45,14 +45,14 @@ export const query = graphql`
           id
           childImageSharp {
             thumb: gatsbyImageData(
-              width: 270
               height: 270
+              layout: CONSTRAINED
               placeholder: TRACED_SVG
             )
             full: gatsbyImageData(
-              quality: 60,
-              width: 600,
-              layout: FULL_WIDTH,
+              quality: 60
+              width: 600
+              layout: FULL_WIDTH
               formats: [WEBP, AUTO]
             )
           }
