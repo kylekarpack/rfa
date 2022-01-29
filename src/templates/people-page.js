@@ -83,7 +83,7 @@ export const peoplePageQuery = graphql`query PeoplePage($id: String!) {
             gatsbyImageData(
               width: 500
               quality: 50
-              placeholder: TRACED_SVG
+              placeholder: BLURRED
               layout: CONSTRAINED
             )
           }

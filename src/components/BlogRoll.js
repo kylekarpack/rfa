@@ -95,7 +95,7 @@ const Wrapper = () => (
                     gatsbyImageData(
                       width: 300
                       quality: 50
-                      placeholder: TRACED_SVG
+                      placeholder: BLURRED
                       layout: CONSTRAINED
                     )
                   }

@@ -18,7 +18,7 @@ export const IndexPageTemplate = ({
 	return <div>
 		<BgImage
 			image={pluginImage}
-			style={{ padding: "10vh 0" }}>
+			style={{ padding: "5vh 0" }}>
 			<div className="section">
 				<div className="container">
 					<div className="columns">
@@ -119,7 +119,7 @@ export default IndexPage;
 export const pageQuery = graphql`query IndexPageTemplate {
   file(relativePath: {eq: "photos/home.jpg"}) {
     childImageSharp {
-      gatsbyImageData(height: 400, quality: 50, layout: FULL_WIDTH)
+      gatsbyImageData(height: 400, quality: 50, placeholder: BLURRED)
     }
   }
   markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
@@ -129,9 +129,10 @@ export const pageQuery = graphql`query IndexPageTemplate {
       image {
         childImageSharp {
           gatsbyImageData(
-            quality: 80
+            quality: 60
             transformOptions: {grayscale: true}
             layout: FULL_WIDTH
+						placeholder: BLURRED
           )
         }
       }
