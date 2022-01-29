@@ -1,14 +1,11 @@
-import Gallery from '@browniebroke/gatsby-image-gallery'
-import '@browniebroke/gatsby-image-gallery/dist/style.css'
-import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-import Layout from '../components/Layout'
+import Gallery from "@browniebroke/gatsby-image-gallery";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import Layout from "../components/Layout";
 
 const PhotosPage = ({ data }) => {
-
-  const fullSize = data.images.edges.map((edge) => edge.node.full.fluid.src)
-  const thumbs = data.images.edges.map((edge) => edge.node.thumb.fluid)
+  const images = data.images.edges.map((edge) => edge.node.childImageSharp);
 
   return (
     <Layout>
@@ -24,42 +21,43 @@ const PhotosPage = ({ data }) => {
 
       <div className="section">
         <div className="container">
-          <Gallery images={fullSize} thumbs={thumbs} />
+          <Gallery images={images} />
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 PhotosPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
-export default PhotosPage
+export default PhotosPage;
 
-export const query = graphql`query ImagesForGallery {
-  images: allFile(
-    filter: {relativeDirectory: {eq: "gallery"}}
-    sort: {fields: name}
-  ) {
-    edges {
-      node {
-        id
-        thumb: childImageSharp {
-          gatsbyImageData(
-            width: 270
-            height: 270
-            placeholder: TRACED_SVG
-            layout: CONSTRAINED
-          )
-        }
-        full: childImageSharp {
-          fluid(maxWidth: 1024, quality: 85, srcSetBreakpoints: [576, 768, 992, 1200]) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+export const query = graphql`
+  query ImagesForGallery {
+    images: allFile(
+      filter: { relativeDirectory: { eq: "gallery" } }
+      sort: { fields: name }
+    ) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            thumb: gatsbyImageData(
+              width: 270
+              height: 270
+              placeholder: TRACED_SVG
+            )
+            full: gatsbyImageData(
+              quality: 60,
+              width: 600,
+              layout: FULL_WIDTH,
+              formats: [WEBP, AUTO]
+            )
           }
         }
       }
     }
   }
-}
-`
+`;
