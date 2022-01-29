@@ -52,7 +52,7 @@ export const IndexPageTemplate = ({
 								<GatsbyImage image={file?.childImageSharp?.gatsbyImageData} alt="Homepage" />
 							</div>
 							<div className="column is-half">
-								<Heading title="Donate Now"></Heading>
+								<Heading title="Rwanda Faith Academy"></Heading>
 								<HTMLContent content={content} />
 								<br />
 								<div>
