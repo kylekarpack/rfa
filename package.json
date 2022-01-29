@@ -5,7 +5,7 @@
   "author": "Kyle Karpack",
   "dependencies": {
     "@browniebroke/gatsby-image-gallery": "^3.3.3",
-    "bulma": "0.9.0",
+    "bulma": "^0.9.3",
     "gatsby": "^4.6.0",
     "gatsby-background-image": "^1.6.0",
     "gatsby-image": "^3.11.0",
