@@ -37,31 +37,29 @@ PhotosPage.propTypes = {
 
 export default PhotosPage
 
-export const query = graphql`
-  query ImagesForGallery {
-    images: allFile(
-      filter: { relativeDirectory: { eq: "gallery" } }
-      sort: { fields: name }
-    ) {
-      edges {
-        node {
-          id
-          thumb: childImageSharp {
-            fluid(maxWidth: 270, maxHeight: 270) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG 
-            }
-          }
-          full: childImageSharp {
-            fluid(
-              maxWidth: 1024
-              quality: 85
-              srcSetBreakpoints: [576, 768, 992, 1200]
-            ) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG 
-            }
+export const query = graphql`query ImagesForGallery {
+  images: allFile(
+    filter: {relativeDirectory: {eq: "gallery"}}
+    sort: {fields: name}
+  ) {
+    edges {
+      node {
+        id
+        thumb: childImageSharp {
+          gatsbyImageData(
+            width: 270
+            height: 270
+            placeholder: TRACED_SVG
+            layout: CONSTRAINED
+          )
+        }
+        full: childImageSharp {
+          fluid(maxWidth: 1024, quality: 85, srcSetBreakpoints: [576, 768, 992, 1200]) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
     }
   }
-  `
+}
+`

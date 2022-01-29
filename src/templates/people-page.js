@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/Layout'
@@ -11,7 +11,7 @@ const PeoplePage = ({ data }) => {
 	columnWidth = columnWidth || "is-one-quarter";
 
 	return (
-		<Layout>
+        <Layout>
 			<div className="title-area">
 				<div className="section">
 					<div className="container">
@@ -28,7 +28,7 @@ const PeoplePage = ({ data }) => {
 							<div className={`column ${columnWidth}`} key={i}>
 								<div className="card">
 									<div className="card-image">
-										<Img fluid={person.image.childImageSharp.fluid} alt={person.name} />
+										<GatsbyImage image={person.image.childImageSharp.gatsbyImageData} alt={person.name} />
 									</div>
 									<div className="card-content">
 										<div className="media">
@@ -63,7 +63,7 @@ const PeoplePage = ({ data }) => {
 			</div>
 
 		</Layout>
-	)
+    );
 }
 
 PeoplePage.propTypes = {
@@ -72,30 +72,32 @@ PeoplePage.propTypes = {
 
 export default PeoplePage
 
-export const peoplePageQuery = graphql`
-  query PeoplePage ($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-		frontmatter {
-			title
-			columnWidth	
-			people {
-				image {
-					childImageSharp {
-						fluid(maxWidth: 500, quality: 50) {
-							...GatsbyImageSharpFluid_tracedSVG 
-						}
-					}
-				}
-				name
-				role
-				info
-				text
-				button {
-					text
-					link
-				}
-			}
-		  }
+export const peoplePageQuery = graphql`query PeoplePage($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    frontmatter {
+      title
+      columnWidth
+      people {
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 500
+              quality: 50
+              placeholder: TRACED_SVG
+              layout: CONSTRAINED
+            )
+          }
+        }
+        name
+        role
+        info
+        text
+        button {
+          text
+          link
+        }
+      }
     }
   }
+}
 `

@@ -1,47 +1,47 @@
-import { graphql, StaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
-import React from 'react'
-import BlogRoll from '../../components/BlogRoll'
-import { Heading } from '../../components/Heading'
-import Layout from '../../components/Layout'
+import { graphql, StaticQuery } from "gatsby";
+import { BgImage } from "gbimage-bridge";
+import React from "react";
+import BlogRoll from "../../components/BlogRoll";
+import { Heading } from "../../components/Heading";
+import Layout from "../../components/Layout";
 
 export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-
         <StaticQuery
           query={graphql`
-            query {
-              file(publicURL: {regex: "/.*blog-index./"}) { # ToDo: improve this query
+            {
+              file(publicURL: { regex: "/.*blog-index./" }) {
                 childImageSharp {
-                  fluid(quality: 60, maxWidth: 2048) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(quality: 60, layout: FULL_WIDTH)
                 }
               }
             }
           `}
-          render={data => {
-            const imageData = data.file.childImageSharp.fluid;
+          render={(data) => {
+            const imageData = data.file.childImageSharp.gatsbyImageData;
             return (
-              <BackgroundImage
+              <BgImage
                 Tag="section"
-                fluid={imageData}
+                image={imageData}
                 backgroundColor={`rgba(69, 148, 170, 0.8)`}
-                style={{padding: "10vh 0"}}>
+                style={{ padding: "10vh 0" }}>
                 <div className="container">
                   <div
                     className="has-text-weight-bold is-size-1"
                     style={{
-                      backgroundColor: 'rgba(69, 148, 170, 0.8)',
-                      padding: '1rem',
+                      backgroundColor: "rgba(69, 148, 170, 0.8)",
+                      padding: "1rem",
                     }}>
-                    <Heading title="Rwanda Faith Academy Blog" className="is-size-1" style={{ margin: 0, color: "#fff" }}></Heading>
+                    <Heading
+                      title="Rwanda Faith Academy Blog"
+                      className="is-size-1"
+                      style={{ margin: 0, color: "#fff" }}></Heading>
                   </div>
                 </div>
-              </BackgroundImage>
-            )
+              </BgImage>
+            );
           }}
         />
         <section className="section">
@@ -52,6 +52,6 @@ export default class BlogIndexPage extends React.Component {
           </div>
         </section>
       </Layout>
-    )
+    );
   }
 }

@@ -1,6 +1,6 @@
 import { graphql } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { BgImage } from 'gbimage-bridge';
 import PropTypes from "prop-types";
 import React from "react";
 import { HTMLContent } from "../components/Content";
@@ -13,10 +13,11 @@ export const IndexPageTemplate = ({
 	subheading,
 	content,
 	file,
-}) => (
-	<div>
-		<BackgroundImage
-			fluid={image?.childImageSharp?.fluid}
+}) => {
+	const pluginImage = getImage(image);
+	return <div>
+		<BgImage
+			image={pluginImage}
 			style={{ padding: "10vh 0" }}>
 			<div className="section">
 				<div className="container">
@@ -41,17 +42,14 @@ export const IndexPageTemplate = ({
 					</div>
 				</div>
 			</div>
-		</BackgroundImage>
+		</BgImage>
 		<section className="section section--gradient">
 			<div className="container">
 				<div className="section">
 					<div className="content">
 						<div className="columns">
 							<div className="column is-half">
-								<Img
-									fluid={file?.childImageSharp?.fluid}
-									alt="Homepage"
-								/>
+								<GatsbyImage image={file?.childImageSharp?.gatsbyImageData} alt="Homepage" />
 							</div>
 							<div className="column is-half">
 								<Heading title="Donate Now"></Heading>
@@ -73,7 +71,7 @@ export const IndexPageTemplate = ({
 			</div>
 		</section>
 	</div>
-);
+};
 
 IndexPageTemplate.propTypes = {
 	image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -90,8 +88,6 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
 	const { markdownRemark, file } = data;
 	const { frontmatter, html } = markdownRemark;
-
-	console.log(file);
 
 	return (
 		<Layout>
@@ -120,28 +116,27 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const pageQuery = graphql`
-	query IndexPageTemplate {
-		file(relativePath: { eq: "photos/home.jpg" }) {
-			childImageSharp {
-				fluid(maxHeight: 400, quality: 50) {
-					...GatsbyImageSharpFluid_withWebp
-				}
-			}
-		}
-		markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-			html
-			frontmatter {
-				title
-				image {
-					childImageSharp {
-						fluid(maxWidth: 2048, quality: 80, grayscale: true) {
-							...GatsbyImageSharpFluid_withWebp
-						}
-					}
-				}
-				subheading
-			}
-		}
-	}
+export const pageQuery = graphql`query IndexPageTemplate {
+  file(relativePath: {eq: "photos/home.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(height: 400, quality: 50, layout: FULL_WIDTH)
+    }
+  }
+  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    html
+    frontmatter {
+      title
+      image {
+        childImageSharp {
+          gatsbyImageData(
+            quality: 80
+            transformOptions: {grayscale: true}
+            layout: FULL_WIDTH
+          )
+        }
+      }
+      subheading
+    }
+  }
+}
 `;
