@@ -24,9 +24,9 @@ count: "3"
 taxonomy: "post_tag"
 name: "wp"
 templated: "true"
-featuredimage: "/img/Mission-Day.jpg"
+featuredimage: "/img/gallery/Mission-Day.jpg"
 templateKey: 'blog-post'
 ---
 Rwanda Faith Academy (RFA) was one of many&#xA0;organizations represented at Bellevue First Presbyterian&#x2019;s Global Mission Day.&#xA0; The RFA project team manned a table for several hours and spoke to anyone who came by to learn more about the school in Rwanda and the work here in the US to raise awareness and support.
 
-![](/img/Mission-Day.jpg)
+![](/img/gallery/Mission-Day.jpg)

@@ -24,7 +24,7 @@ count: "2"
 taxonomy: "post_tag"
 name: "wp"
 templated: "true"
-featuredimage: "/img/World-Teacher-Day.jpg"
+featuredimage: "/img/gallery/World-Teacher-Day.jpg"
 templateKey: 'blog-post'
 ---
 World Teacher Day was joyously celebrated on October 5th at RFA. The teachers looked very smart in their white shirts or blouses, black pants or skirts and red ties. This &#x201C;uniform&#x201D; was chosen by the teachers for a dignified effect in the celebration of this special day. World Teachers Day is held every year on October 5th.
@@ -37,4 +37,4 @@ The Sector leader from the Office of Education told the educators gathered, &#x2
 
 Everyone in attendance received new motivation that will help lift the quality and effect the changes to education in Rwanda. The Teachers and Staff invite you, BelPres, to join them for next year&#x2019;s World Teachers Day!
 
-![](/img/World-Teacher-Day.jpg)
+![](/img/gallery/World-Teacher-Day.jpg)
