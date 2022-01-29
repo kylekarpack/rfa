@@ -51,7 +51,6 @@ export const query = graphql`
             )
             full: gatsbyImageData(
               quality: 60
-              width: 600
               layout: FULL_WIDTH
               formats: [WEBP, AUTO]
             )
