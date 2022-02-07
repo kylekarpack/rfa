@@ -1,14 +1,11 @@
-import Gallery from '@browniebroke/gatsby-image-gallery'
-import '@browniebroke/gatsby-image-gallery/dist/style.css'
-import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-import Layout from '../components/Layout'
+import Gallery from "@browniebroke/gatsby-image-gallery";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import Layout from "../components/Layout";
 
 const PhotosPage = ({ data }) => {
-
-  const fullSize = data.images.edges.map((edge) => edge.node.full.fluid.src)
-  const thumbs = data.images.edges.map((edge) => edge.node.thumb.fluid)
+  const images = data.images.edges.map((edge) => edge.node.childImageSharp);
 
   return (
     <Layout>
@@ -24,18 +21,18 @@ const PhotosPage = ({ data }) => {
 
       <div className="section">
         <div className="container">
-          <Gallery images={fullSize} thumbs={thumbs} />
+          <Gallery images={images} />
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 PhotosPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
-export default PhotosPage
+export default PhotosPage;
 
 export const query = graphql`
   query ImagesForGallery {
@@ -46,22 +43,20 @@ export const query = graphql`
       edges {
         node {
           id
-          thumb: childImageSharp {
-            fluid(maxWidth: 270, maxHeight: 270) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG 
-            }
-          }
-          full: childImageSharp {
-            fluid(
-              maxWidth: 1024
-              quality: 85
-              srcSetBreakpoints: [576, 768, 992, 1200]
-            ) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG 
-            }
+          childImageSharp {
+            thumb: gatsbyImageData(
+              height: 270
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
+            full: gatsbyImageData(
+              quality: 60
+              layout: FULL_WIDTH
+              formats: [WEBP, AUTO]
+            )
           }
         }
       }
     }
   }
-  `
+`;

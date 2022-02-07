@@ -1,7 +1,7 @@
-import React from 'react'
-import Layout from '../../components/Layout'
+import React from "react";
+import Layout from "../../components/Layout";
 
-export default () => (
+const Thanks = () => (
   <Layout>
     <div className="title-area">
       <div className="section">
@@ -20,4 +20,6 @@ export default () => (
       </div>
     </section>
   </Layout>
-)
+);
+
+export default Thanks;
