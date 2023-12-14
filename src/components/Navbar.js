@@ -97,7 +97,7 @@ const Navbar = class extends React.Component {
               <div className="navbar-item">
                 <a
                   className="button is-primary"
-                  href="https://newhorizonsfoundation.com/projectsdonate/2068-j-n-rwanda-faith-academy/backing"
+                  href="https://newhorizonsfoundation.com/project/single-project/1793/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
